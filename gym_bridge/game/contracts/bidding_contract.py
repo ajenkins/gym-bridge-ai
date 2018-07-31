@@ -1,4 +1,6 @@
+from gym_bridge.game.constants import BIDDING_CONTRACTS
+
 class BiddingContract:
 
-    def funcname(self, parameter_list):
-        pass
+    def call(self, hand, previous_bids):
+        raise NotImplementedError
