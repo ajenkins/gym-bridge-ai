@@ -6,8 +6,15 @@ CARD_SUITS = ['Club', 'Diamond', 'Heart', 'Spade']
 CARD_RANKS = list(range(2, 11)) + ['Jack', 'Queen', 'King', 'Ace']
 ALL_CARDS = [Card(rank=rank, suit=suit) for rank in CARD_RANKS for suit in CARD_SUITS]
 
+# Players
+PLAYERS = ['North', 'East', 'South', 'West']
+NS_TEAM = (PLAYERS[0], PLAYERS[2])
+EW_TEAM = (PLAYERS[1], PLAYERS[3])
+TEAMS = (NS_TEAM, EW_TEAM)
+
 # Bidding
 Contract = namedtuple('Contract', ['level', 'trump_suit'])
+PASS = 'Pass'
 BID_LEVELS = [1, 2, 3, 4, 5, 6, 7]
 TRUMP_SUITS = CARD_SUITS + ['NoTrump']
 BIDDING_CONTRACTS = [Contract(level=level, trump_suit=suit)
