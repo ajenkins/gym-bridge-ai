@@ -46,7 +46,7 @@ class AmericanStandard(BiddingContract):
         """Returns True or False if hand contains an at least n cards in a major suit"""
         return cls._num_cards_of_suit(HEART, hand) >= n or cls._num_cards_of_suit(SPADE, hand)
 
-    @staticmethod
-    def _n_card_minor(n, hand):
+    @classmethod
+    def _n_card_minor(cls, n, hand):
         """Returns True or False if hand contains an at least n cards in a minor suit"""
         return cls._num_cards_of_suit(CLUB, hand) >= n or cls._num_cards_of_suit(DIAMOND, hand)
