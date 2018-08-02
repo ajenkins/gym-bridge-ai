@@ -1,7 +1,8 @@
 from gym_bridge.game.contracts.bidding_contract import BiddingContract
-from gym_bridge.game.constants import (
-    BIDDING_CONTRACTS, PASS, JACK, QUEEN, KING, ACE, CLUB, DIAMOND, HEART, SPADE
-    )
+from gym_bridge.game.constants.bidding import PASS
+from gym_bridge.game.constants.cards import (
+    JACK, QUEEN, KING, ACE, CLUB, DIAMOND, HEART, SPADE
+)
 
 
 class AmericanStandard(BiddingContract):
@@ -15,6 +16,8 @@ class AmericanStandard(BiddingContract):
                 return PASS
             elif 12 <= points <= 21:
                 pass
+            else:
+                return
         return PASS
 
     @staticmethod

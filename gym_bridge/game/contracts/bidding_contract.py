@@ -1,5 +1,3 @@
-from gym_bridge.game.constants import BIDDING_CONTRACTS
-
 class BiddingContract:
 
     @classmethod
