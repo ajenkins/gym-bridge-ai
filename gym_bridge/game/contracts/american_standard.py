@@ -26,7 +26,10 @@ class AmericanStandard(BiddingContract):
         return 0
 
     @staticmethod
-    def _calculate_points(hand):
+    def _calculate_points(hand, suit=None):
+        """Number of points total in hand, or for one suit"""
+        if suit:
+            cards = [] # In progress
         total = 0
         for card in hand:
             if card.rank == JACK:
@@ -46,10 +49,10 @@ class AmericanStandard(BiddingContract):
 
     @classmethod
     def _n_card_major(cls, n, hand):
-        """Returns True or False if hand contains an at least n cards in a major suit"""
+        """Returns True or False if hand contains at least n cards in a major suit"""
         return cls._num_cards_of_suit(HEART, hand) >= n or cls._num_cards_of_suit(SPADE, hand)
 
     @classmethod
     def _n_card_minor(cls, n, hand):
-        """Returns True or False if hand contains an at least n cards in a minor suit"""
+        """Returns True or False if hand contains at least n cards in a minor suit"""
         return cls._num_cards_of_suit(CLUB, hand) >= n or cls._num_cards_of_suit(DIAMOND, hand)
